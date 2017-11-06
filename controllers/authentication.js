@@ -37,3 +37,9 @@ exports.signup = (req, res, next) => {
     });
   });
 };
+
+exports.signin = (req, res, next) => {
+  // User has already their email and password auth'd
+  // we just want to give them a token
+  res.send({ token: tokenForUser(req.user) });
+};

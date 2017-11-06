@@ -3,10 +3,13 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser'); //used to parse incoming requests
 const morgan = require('morgan'); //login framework
+const mongoose = require('mongoose');
 const router = require('./router');
 
-
 const app = express();
+
+//DB setup
+mongoose.connect('mongodb://localhost:auth/auth');
 
 //App setup
 app.use(morgan('combined'));
